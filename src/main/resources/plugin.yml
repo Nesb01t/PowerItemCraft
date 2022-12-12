@@ -2,3 +2,11 @@ name: PowerItemCraft
 version: '${project.version}'
 main: nesb01t.poweritemcraft.PowerItemCraft
 api-version: 1.14
+commands:
+  pic:
+    description: This is main controller
+    usage: /pic
+    aliases:
+      - pi
+      - poweritemcraft
+      - poweritem
