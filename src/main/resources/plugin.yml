@@ -1,0 +1,4 @@
+name: PowerItemCraft
+version: '${project.version}'
+main: nesb01t.poweritemcraft.PowerItemCraft
+api-version: 1.14
