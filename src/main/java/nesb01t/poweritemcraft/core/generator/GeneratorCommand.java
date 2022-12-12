@@ -11,7 +11,7 @@ public class GeneratorCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Message.sendPlayerMsg((Player) sender, String.valueOf(args.length));
-        return false;
+        return true;
     }
 
     public Material getItemMaterial(String name) {
