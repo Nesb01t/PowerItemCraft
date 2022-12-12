@@ -1,15 +1,16 @@
 package nesb01t.poweritemcraft.core.generator;
 
+import nesb01t.poweritemcraft.utils.Message;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 
 public class GeneratorCommand implements CommandExecutor {
-
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
+        Message.sendPlayerMsg((Player) sender, String.valueOf(args.length));
         return false;
     }
 
@@ -27,9 +28,5 @@ public class GeneratorCommand implements CommandExecutor {
                 return Material.WOODEN_PICKAXE;
         }
         return Material.WOODEN_PICKAXE;
-    }
-
-    public enum ToolMaterial {
-        DIAMOND, GOLDEN, IRON, WOODEN, STONE
     }
 }

@@ -1,8 +1,8 @@
 package nesb01t.poweritemcraft.global;
 
-import org.bukkit.Color;
+import org.bukkit.ChatColor;
 
 public class GlobalOptions {
-    public final static String consolePrefix = Color.ORANGE + "PowerItemCraft " + Color.WHITE + ">>> " + Color.GRAY;
-    public final static String ingamePrefix = Color.ORANGE + "PowerItemCraft " + "◘ " + Color.GRAY;
+    public final static String consolePrefix = "PowerItemCraft >>> ";
+    public final static String ingamePrefix = ChatColor.translateAlternateColorCodes('&', "&f&l◘ &7");
 }
