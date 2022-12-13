@@ -18,8 +18,9 @@ public class ItemGenerator {
     }
 
     /**
-     * 执行物品描述设置
+     * 物品Name设置
      *
+     * @param itemStack
      * @return
      */
     private static ItemStack makeItemNamed(ItemStack itemStack) {
@@ -31,6 +32,12 @@ public class ItemGenerator {
         return itemStack;
     }
 
+    /**
+     * 物品Lore设置
+     *
+     * @param itemStack
+     * @return
+     */
     private static ItemStack makeItemLored(ItemStack itemStack) {
         ItemMeta itemMeta = itemStack.getItemMeta();
 
@@ -39,10 +46,14 @@ public class ItemGenerator {
         return itemStack;
     }
 
+    /**
+     * Lore的ArrayList默认值
+     *
+     * @return
+     */
     private static ArrayList<String> getDefaultLore() {
         ArrayList<String> lore = new ArrayList<String>();
         lore.add(ItemUtils.makeColor("&7匠人印记 I"));
-        lore.add(ItemUtils.makeColor("&8匠人经验 &70&f/&71000"));
         return lore;
     }
 }
