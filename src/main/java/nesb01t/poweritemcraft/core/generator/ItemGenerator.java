@@ -21,7 +21,7 @@ public class ItemGenerator {
         return itemStack;
     }
 
-    private static ItemStack makeItemEnchanted(ItemStack itemStack) {
+    public static ItemStack makeItemEnchanted(ItemStack itemStack) {
         ItemMeta itemMeta = itemStack.getItemMeta();
         Enchantment enchantment = ItemUtils.getRandomEnchant(itemStack.getType());
         int level = itemMeta.getEnchantLevel(enchantment);

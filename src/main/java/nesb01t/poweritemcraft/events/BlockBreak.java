@@ -1,4 +1,4 @@
-package nesb01t.poweritemcraft.core.events;
+package nesb01t.poweritemcraft.events;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
