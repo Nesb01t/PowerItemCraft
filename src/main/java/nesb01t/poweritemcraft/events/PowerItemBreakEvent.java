@@ -7,7 +7,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerItemBreakEvent;
 import org.bukkit.inventory.ItemStack;
 
-public class ItemBreak implements Listener {
+public class PowerItemBreakEvent implements Listener {
     @EventHandler
     public void onItemBreak(PlayerItemBreakEvent event) {
         if (event.getBrokenItem().getItemMeta().getLore().isEmpty()) {

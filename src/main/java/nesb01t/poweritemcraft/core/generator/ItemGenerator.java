@@ -1,13 +1,15 @@
 package nesb01t.poweritemcraft.core.generator;
 
 import nesb01t.poweritemcraft.utils.ItemUtils;
+import nesb01t.poweritemcraft.utils.StringUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
+
+import static nesb01t.poweritemcraft.utils.EnchantUtils.makeItemEnchanted;
 
 public class ItemGenerator {
     public static ItemStack createPowerItem(Material material) {
@@ -21,28 +23,13 @@ public class ItemGenerator {
         return itemStack;
     }
 
-    public static ItemStack makeItemEnchanted(ItemStack itemStack) {
-        ItemMeta itemMeta = itemStack.getItemMeta();
-        Enchantment enchantment = ItemUtils.getRandomEnchant(itemStack.getType());
-        int level = itemMeta.getEnchantLevel(enchantment);
-        if (level == 0) {
-            itemMeta.addEnchant(enchantment, 1, true);
-        } else {
-            itemMeta.addEnchant(enchantment, level + 1, true);
-        }
-        itemStack.setItemMeta(itemMeta);
-        return itemStack;
-    }
 
     /**
      * 物品Name设置
-     *
-     * @param itemStack
-     * @return
      */
     private static ItemStack makeItemNamed(ItemStack itemStack) {
         ItemMeta itemMeta = itemStack.getItemMeta();
-        String localeName = ItemUtils.getLocaleName(itemStack.getType());
+        String localeName = ItemUtils.getNameByMaterial(itemStack.getType());
         String displayName = ChatColor.translateAlternateColorCodes('&', "&a" + localeName);
         itemMeta.setDisplayName(displayName);
         itemStack.setItemMeta(itemMeta);
@@ -51,9 +38,6 @@ public class ItemGenerator {
 
     /**
      * 物品Lore设置
-     *
-     * @param itemStack
-     * @return
      */
     private static ItemStack makeItemLored(ItemStack itemStack) {
         ItemMeta itemMeta = itemStack.getItemMeta();
@@ -65,12 +49,10 @@ public class ItemGenerator {
 
     /**
      * Lore的ArrayList默认值
-     *
-     * @return
      */
     private static ArrayList<String> getDefaultLore() {
-        ArrayList<String> lore = new ArrayList<String>();
-        lore.add(ItemUtils.makeColor("&7匠人印记 I"));
+        ArrayList<String> lore = new ArrayList<>();
+        lore.add(StringUtils.useColor("&7匠人印记 I"));
         return lore;
     }
 }

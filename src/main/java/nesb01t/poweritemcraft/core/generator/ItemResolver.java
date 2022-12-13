@@ -1,7 +1,7 @@
 package nesb01t.poweritemcraft.core.generator;
 
-import nesb01t.poweritemcraft.utils.ItemUtils;
 import nesb01t.poweritemcraft.utils.MessageUtils;
+import nesb01t.poweritemcraft.utils.StringUtils;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -9,6 +9,8 @@ import org.bukkit.inventory.meta.ItemMeta;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static nesb01t.poweritemcraft.utils.EnchantUtils.makeItemEnchanted;
 
 public class ItemResolver {
     private final static List<Material> pickaxeList = List.of(new Material[]{Material.WOODEN_PICKAXE, Material.STONE_PICKAXE, Material.IRON_PICKAXE, Material.GOLDEN_PICKAXE, Material.DIAMOND_PICKAXE});
@@ -28,8 +30,8 @@ public class ItemResolver {
             int level = resolveAlpha(alpha);
 
             itemStack = setLevelLore(itemStack, level + 1);
-            itemStack = ItemGenerator.makeItemEnchanted(itemStack);
-            itemStack = ItemGenerator.makeItemEnchanted(itemStack);
+            itemStack = makeItemEnchanted(itemStack);
+            itemStack = makeItemEnchanted(itemStack);
         }
         return itemStack;
     }
@@ -93,7 +95,7 @@ public class ItemResolver {
 
     private static ArrayList<String> getLevelLore(int level) {
         ArrayList<String> lore = new ArrayList<String>();
-        lore.add(ItemUtils.makeColor("&7匠人印记 " + getAlpha(level)));
+        lore.add(StringUtils.useColor("&7匠人印记 " + getAlpha(level)));
         return lore;
     }
 }

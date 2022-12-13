@@ -1,5 +1,6 @@
-package nesb01t.poweritemcraft.core.generator;
+package nesb01t.poweritemcraft.command;
 
+import nesb01t.poweritemcraft.utils.ItemUtils;
 import nesb01t.poweritemcraft.utils.MessageUtils;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
@@ -9,9 +10,8 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
 import static nesb01t.poweritemcraft.core.generator.ItemGenerator.createPowerItem;
-import static nesb01t.poweritemcraft.utils.ItemUtils.getItemMaterial;
 
-public class GeneratorCommand implements CommandExecutor {
+public class givePowerItem implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
         Player player = (Player) sender;
@@ -19,7 +19,7 @@ public class GeneratorCommand implements CommandExecutor {
         MessageUtils.sendPlayerMsg(player, String.valueOf(args.length));
 
         if (args.length == 1) {
-            Material material = getItemMaterial(args[0]);
+            Material material = ItemUtils.getMaterialByName(args[0]);
             ItemStack poweritem = createPowerItem(material);
             player.getInventory().addItem(poweritem);
         }

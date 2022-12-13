@@ -1,4 +1,4 @@
-package nesb01t.poweritemcraft.global;
+package nesb01t.poweritemcraft.utils;
 
 import org.bukkit.ChatColor;
 
