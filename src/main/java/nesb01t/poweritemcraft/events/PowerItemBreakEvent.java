@@ -20,7 +20,7 @@ public class PowerItemBreakEvent implements Listener {
 
     public void updateNewItem(Player player, ItemStack item) {
         item.setDurability((short) 0);
-        ItemModifier.levelUp(item);
+        ItemModifier.levelUp(item, player);
         player.setItemInHand(item);
     }
 }
