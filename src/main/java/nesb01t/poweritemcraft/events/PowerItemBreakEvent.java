@@ -12,11 +12,15 @@ public class PowerItemBreakEvent implements Listener {
     public void onItemBreak(PlayerItemBreakEvent event) {
         if (event.getBrokenItem().getItemMeta().getLore().isEmpty()) {
             return;
-        } else {
-            Player player = event.getPlayer();
-            ItemStack itemStack = ItemModifier.setPowerLevel(event.getBrokenItem(), 1);
-            itemStack.setDurability((short) 0);
-            player.setItemInHand(itemStack);
         }
+        Player player = event.getPlayer();
+        ItemStack item = event.getBrokenItem();
+        updateNewItem(player, item);
+    }
+
+    public void updateNewItem(Player player, ItemStack item) {
+        item.setDurability((short) 0);
+        ItemModifier.levelUp(item);
+        player.setItemInHand(item);
     }
 }

@@ -15,18 +15,15 @@ public class EnchantUtils {
 
     public static ItemStack makeItemEnchanted(ItemStack itemStack) {
         ItemMeta itemMeta = itemStack.getItemMeta();
-        Enchantment enchantment = getRandomEnchant(itemStack.getType());
+        Enchantment enchantment = getTypedRandomEnchant(itemStack.getType());
         int level = itemMeta.getEnchantLevel(enchantment);
-        if (level == 0) {
-            itemMeta.addEnchant(enchantment, 1, true);
-        } else {
-            itemMeta.addEnchant(enchantment, level + 1, true);
-        }
+        if (level > 9) level = 9;
+        itemMeta.addEnchant(enchantment, level + 1, true);
         itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
 
-    public static Enchantment getRandomEnchant(Material material) {
+    public static Enchantment getTypedRandomEnchant(Material material) {
         if (pickaxeList.contains(material)) {
             if (chanceOf(20)) {
                 return Enchantment.LOOT_BONUS_BLOCKS;
