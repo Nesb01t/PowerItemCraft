@@ -3,6 +3,7 @@ package nesb01t.poweritemcraft.core.generator;
 import nesb01t.poweritemcraft.utils.ItemUtils;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -14,6 +15,22 @@ public class ItemGenerator {
 
         itemStack = makeItemNamed(itemStack);
         itemStack = makeItemLored(itemStack);
+        itemStack = makeItemEnchanted(itemStack);
+        itemStack = makeItemEnchanted(itemStack);
+        itemStack = makeItemEnchanted(itemStack);
+        return itemStack;
+    }
+
+    private static ItemStack makeItemEnchanted(ItemStack itemStack) {
+        ItemMeta itemMeta = itemStack.getItemMeta();
+        Enchantment enchantment = ItemUtils.getRandomEnchant(itemStack.getType());
+        int level = itemMeta.getEnchantLevel(enchantment);
+        if (level == 0) {
+            itemMeta.addEnchant(enchantment, 1, true);
+        } else {
+            itemMeta.addEnchant(enchantment, level + 1, true);
+        }
+        itemStack.setItemMeta(itemMeta);
         return itemStack;
     }
 
