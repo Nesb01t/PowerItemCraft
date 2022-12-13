@@ -13,7 +13,15 @@ import org.bukkit.inventory.meta.ItemMeta;
 public class GeneratorCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        Message.sendPlayerMsg((Player) sender, String.valueOf(args.length));
+        Player player = (Player) sender;
+
+        Message.sendPlayerMsg(player, String.valueOf(args.length));
+
+        if (args.length == 1) {
+            Material material = getItemMaterial(args[0]);
+            ItemStack poweritem = createPowerItem(material);
+            player.getInventory().addItem(poweritem);
+        }
         return true;
     }
 
