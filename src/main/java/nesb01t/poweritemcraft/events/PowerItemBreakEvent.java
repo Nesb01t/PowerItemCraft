@@ -1,6 +1,6 @@
 package nesb01t.poweritemcraft.events;
 
-import nesb01t.poweritemcraft.core.generator.ItemResolver;
+import nesb01t.poweritemcraft.core.items.ItemModifier;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,7 +14,7 @@ public class PowerItemBreakEvent implements Listener {
             return;
         } else {
             Player player = event.getPlayer();
-            ItemStack itemStack = ItemResolver.addPowerLevel(event.getBrokenItem());
+            ItemStack itemStack = ItemModifier.setPowerLevel(event.getBrokenItem(), 1);
             itemStack.setDurability((short) 0);
             player.setItemInHand(itemStack);
         }

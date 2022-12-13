@@ -9,7 +9,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import static nesb01t.poweritemcraft.core.generator.ItemGenerator.createPowerItem;
+import static nesb01t.poweritemcraft.core.items.ItemGenerator.createNewItem;
 
 public class givePowerItem implements CommandExecutor {
     @Override
@@ -20,7 +20,7 @@ public class givePowerItem implements CommandExecutor {
 
         if (args.length == 1) {
             Material material = ItemUtils.getMaterialByName(args[0]);
-            ItemStack poweritem = createPowerItem(material);
+            ItemStack poweritem = createNewItem(material);
             player.getInventory().addItem(poweritem);
         }
         return true;
