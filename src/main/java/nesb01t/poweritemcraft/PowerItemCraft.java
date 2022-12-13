@@ -1,7 +1,7 @@
 package nesb01t.poweritemcraft;
 
 import nesb01t.poweritemcraft.core.Core;
-import nesb01t.poweritemcraft.utils.Message;
+import nesb01t.poweritemcraft.utils.MessageUtils;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -22,11 +22,11 @@ public final class PowerItemCraft extends JavaPlugin {
     public void onEnable() {
         pluginInstance = this;
         core = new Core();
-        Message.sendConsoleMsg("正在启动 PowerItemCraft.");
+        MessageUtils.sendConsoleMsg("正在启动 PowerItemCraft.");
     }
 
     @Override
     public void onDisable() {
-        Message.sendConsoleMsg("正在关闭 PowerItemCraft.");
+        MessageUtils.sendConsoleMsg("正在关闭 PowerItemCraft.");
     }
 }

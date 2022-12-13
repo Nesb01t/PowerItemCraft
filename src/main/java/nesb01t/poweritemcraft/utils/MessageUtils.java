@@ -4,7 +4,7 @@ import nesb01t.poweritemcraft.global.GlobalOptions;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class Message {
+public class MessageUtils {
     /**
      * 发送信息 - 控制台
      *
