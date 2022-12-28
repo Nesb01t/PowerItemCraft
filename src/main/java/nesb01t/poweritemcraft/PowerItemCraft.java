@@ -18,10 +18,14 @@ public final class PowerItemCraft extends JavaPlugin {
         pluginInstance.getCommand(name).setExecutor(executor);
     }
 
-    @Override
-    public void onEnable() {
+    public void initPluginCore() {
         pluginInstance = this;
         core = new Core();
+    }
+
+    @Override
+    public void onEnable() {
+        initPluginCore();
         MessageUtils.sendConsoleMsg("正在启动 PowerItemCraft.");
     }
 

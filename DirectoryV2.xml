@@ -13,4 +13,9 @@
      <tree path="/src/main/java/nesb01t/poweritemcraft/utils/MathUtils.java" title="数学" extension="java"/>
     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/MessageUtils.java" title="消息推送" extension="java"/>
     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/StringUtils.java" title="文本处理" extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/core/poweritems/ItemDescriptionUtils.java" title="物品描述"
+          extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/GlobalOptions.java" title="全局选项" extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/core/poweritems/ItemModifier.java" title="物品修改"
+          extension="java"/>
 </trees>

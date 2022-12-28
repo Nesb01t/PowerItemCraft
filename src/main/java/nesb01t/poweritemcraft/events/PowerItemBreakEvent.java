@@ -1,6 +1,7 @@
 package nesb01t.poweritemcraft.events;
 
-import nesb01t.poweritemcraft.core.items.ItemModifier;
+import nesb01t.poweritemcraft.core.poweritems.PowerItem;
+import nesb01t.poweritemcraft.core.service.PlayerService;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -10,17 +11,13 @@ import org.bukkit.inventory.ItemStack;
 public class PowerItemBreakEvent implements Listener {
     @EventHandler
     public void onItemBreak(PlayerItemBreakEvent event) {
-        if (event.getBrokenItem().getItemMeta().getLore().isEmpty()) {
+        ItemStack itemStack = event.getBrokenItem();
+        boolean isPowerItem = PowerItem.isPowerItem(itemStack);
+        if (!isPowerItem) { // 检查Lore
             return;
+        } else {
+            Player player = event.getPlayer();
+            PlayerService.playerItemLevelUp(player); // 提供玩家升级
         }
-        Player player = event.getPlayer();
-        ItemStack item = event.getBrokenItem();
-        updateNewItem(player, item);
-    }
-
-    public void updateNewItem(Player player, ItemStack item) {
-        item.setDurability((short) 0);
-        ItemModifier.levelUp(item, player);
-        player.setItemInHand(item);
     }
 }

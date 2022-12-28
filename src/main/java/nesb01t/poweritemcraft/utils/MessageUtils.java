@@ -1,5 +1,6 @@
 package nesb01t.poweritemcraft.utils;
 
+import nesb01t.poweritemcraft.GlobalOptions;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 

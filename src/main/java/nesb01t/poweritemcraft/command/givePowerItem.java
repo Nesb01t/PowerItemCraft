@@ -7,7 +7,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 
-import static nesb01t.poweritemcraft.core.items.ItemGenerator.createNewItem;
+import static nesb01t.poweritemcraft.core.poweritems.ItemGenerator.createNewItem;
 import static nesb01t.poweritemcraft.utils.ItemUtils.getMaterialByName;
 
 public class givePowerItem implements CommandExecutor {
