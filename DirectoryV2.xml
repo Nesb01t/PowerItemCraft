@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+ <trees>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/events/PowerItemAntiAnvil.java" extension="java"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft" title="代码库"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/command" title="指令管理"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/core" title="核心功能"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/events" title="事件管理"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/utils" title="实用类二次封装"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/PowerItemCraft.java" title="main" extension="java"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/EnchantUtils.java" title="附魔" extension="java"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/GlobalOptions.java" title="全局 Options" extension="java"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/ItemUtils.java" title="物品" extension="java"/>
+     <tree path="/src/main/java/nesb01t/poweritemcraft/utils/MathUtils.java" title="数学" extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/utils/MessageUtils.java" title="消息推送" extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/utils/StringUtils.java" title="文本处理" extension="java"/>
+</trees>
