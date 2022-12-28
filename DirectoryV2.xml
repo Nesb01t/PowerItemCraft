@@ -18,4 +18,5 @@
     <tree path="/src/main/java/nesb01t/poweritemcraft/GlobalOptions.java" title="全局选项" extension="java"/>
     <tree path="/src/main/java/nesb01t/poweritemcraft/core/poweritems/ItemModifier.java" title="物品修改"
           extension="java"/>
+    <tree path="/src/main/java/nesb01t/poweritemcraft/command/givePowerItem.java" title="给予物品" extension="java"/>
 </trees>

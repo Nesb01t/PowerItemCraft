@@ -1,9 +1,11 @@
 package nesb01t.poweritemcraft.core.poweritems;
 
+import nesb01t.poweritemcraft.utils.ItemUtils;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 
 import java.util.List;
+
 
 public class PowerItem {
     private ItemStack item;
@@ -15,6 +17,12 @@ public class PowerItem {
 
     public PowerItem(ItemStack itemStack) {
         this.item = itemStack;
+    }
+
+    public PowerItem(String name) {
+        Material material = ItemUtils.getMaterialByName(name);
+        ItemStack itemStack = new ItemStack(material);
+        ItemDescriptionUtils.setFormatName(this); // 格式化物品名
     }
 
     public ItemStack getItem() {
